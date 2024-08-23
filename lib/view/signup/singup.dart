@@ -153,7 +153,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 30),
+                      SizedBox(height: 200),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [

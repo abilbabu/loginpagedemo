@@ -122,7 +122,7 @@ class _SigninPageState extends State<SigninPage> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 30),
+                      SizedBox(height: 10),
                       Container(
                         width: double.infinity,
                         child: ElevatedButton(
@@ -154,7 +154,7 @@ class _SigninPageState extends State<SigninPage> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 30),
+                      SizedBox(height: 200),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
