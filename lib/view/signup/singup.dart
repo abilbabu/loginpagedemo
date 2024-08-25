@@ -14,10 +14,26 @@ class _SignUpPageState extends State<SignUpPage> {
   final TextEditingController passwordConfirmedController =
       TextEditingController();
   final _formKey = GlobalKey<FormState>();
+  bool passwordVisible = false;
+  bool confirmPasswordVisible = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SigninPage(),
+                  ));
+            },
+            icon: Icon(
+              Icons.arrow_back,
+              size: 40,
+            )),
+      ),
       body: SingleChildScrollView(
         child: Center(
           child: Container(
@@ -25,7 +41,7 @@ class _SignUpPageState extends State<SignUpPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(height: 140),
+                SizedBox(height: 30),
                 Text(
                   "Sign Up For Free",
                   style: TextStyle(
@@ -66,10 +82,19 @@ class _SignUpPageState extends State<SignUpPage> {
                       SizedBox(height: 20),
                       TextFormField(
                         controller: passwordController,
-                        obscureText: true,
+                        obscureText: !passwordVisible,
                         decoration: InputDecoration(
                           hintText: "Your Password",
                           label: Text("Password"),
+                          suffixIcon: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  passwordVisible = !passwordVisible;
+                                });
+                              },
+                              icon: Icon(passwordVisible
+                                  ? Icons.visibility
+                                  : Icons.visibility_off)),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide: BorderSide(color: Colors.grey),
@@ -92,10 +117,19 @@ class _SignUpPageState extends State<SignUpPage> {
                       SizedBox(height: 20),
                       TextFormField(
                         controller: passwordConfirmedController,
-                        obscureText: true,
+                        obscureText: !passwordVisible,
                         decoration: InputDecoration(
                           hintText: "Your Conform Password",
                           label: Text("Password"),
+                          suffixIcon: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  passwordVisible = !passwordVisible;
+                                });
+                              },
+                              icon: Icon(passwordVisible
+                                  ? Icons.visibility
+                                  : Icons.visibility_off)),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide: BorderSide(color: Colors.grey),
