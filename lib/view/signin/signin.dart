@@ -171,7 +171,7 @@ class _SigninPageState extends State<SigninPage> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 200),
+                    SizedBox(height: 250),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

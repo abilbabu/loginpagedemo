@@ -192,7 +192,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Don't have an account?",
+                            "Always have an account?",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                           TextButton(
